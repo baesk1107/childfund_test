@@ -1,0 +1,768 @@
+/* ========== Reset & Base ========== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  background: #fff;
+  overflow-x: clip;
+  position: relative;
+}
+
+img {
+  display: block;
+  max-width: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ========== Status Bar ========== */
+.status-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  z-index: 1000;
+}
+
+.status-time {
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+}
+
+.status-icons img {
+  width: 67px;
+  height: 11px;
+}
+
+/* ========== Nav Header ========== */
+.nav-header {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 999;
+  background: #fff;
+}
+
+.nav-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== Section 1: Hero (Parallax) ========== */
+.section-hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 104px);
+  margin-top: 104px;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  object-fit: cover;
+  will-change: transform;
+}
+
+.hero-gradient-top {
+  position: absolute;
+  top: 0;
+  left: -15%;
+  width: 130%;
+  height: 46%;
+  background: linear-gradient(to bottom, #fff 45.918%, rgba(237, 237, 233, 0) 98.482%);
+  pointer-events: none;
+}
+
+.hero-gradient-top2 {
+  position: absolute;
+  top: 0;
+  left: -15%;
+  width: 130%;
+  height: 60%;
+  background: linear-gradient(to bottom, #efefec 0.869%, rgba(237, 237, 233, 0) 79.148%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  will-change: transform, opacity;
+}
+
+.hero-title {
+  font-family: 'Gowun Dodum', serif;
+  font-size: clamp(28px, 8.9vw, 35px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -1.05px;
+  color: #019466;
+  margin-top: 11%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-desc {
+  font-size: clamp(12px, 3.56vw, 14px);
+  font-weight: 500;
+  line-height: 1.48;
+  letter-spacing: -0.35px;
+  color: #085b49;
+  margin-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========== Section 2: Benefit (Scroll-hijack carousel) ========== */
+.section-benefit-wrapper {
+  position: relative;
+}
+
+.section-benefit {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #efefec;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.benefit-header {
+  text-align: center;
+  padding-top: 116px;
+  flex-shrink: 0;
+  will-change: transform, opacity;
+}
+
+.benefit-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+  color: #019466;
+}
+
+.benefit-title {
+  font-size: clamp(20px, 6.1vw, 24px);
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.6px;
+  color: #3d3a35;
+  margin-top: 16px;
+}
+
+.benefit-desc {
+  font-size: clamp(12px, 3.56vw, 14px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.35px;
+  color: #666;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Benefit Slider */
+.benefit-slider-area {
+  flex: 1;
+  overflow: hidden;
+  margin-top: 16px;
+  /* padding-left set by JS to center first card */
+  display: flex;
+  align-items: center;
+}
+
+.benefit-slider {
+  display: flex;
+  gap: 10px;
+  will-change: transform;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.benefit-card {
+  position: relative;
+  flex-shrink: 0;
+  width: 82.4vw;
+  max-width: 324px;
+  height: calc(100vh - 270px);
+  max-height: 429px;
+  min-height: 280px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 24px 35px;
+}
+
+.benefit-card .card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.benefit-card .card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(140, 150, 147, 0) 30%, rgba(140, 150, 147, 0.7) 80%);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.benefit-card .card-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.benefit-card .card-content h3 {
+  font-size: clamp(24px, 8.1vw, 32px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.096px;
+}
+
+.benefit-card .card-content p {
+  font-size: clamp(12.5px, 3.69vw, 14.5px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.0435px;
+  margin-top: 12px;
+}
+
+/* Slider Dots - 하단 오른쪽 정렬 (JS가 padding-right를 카드 오른쪽 끝에 맞춤) */
+.slider-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding-top: clamp(12px, 2vh, 32px);
+  padding-bottom: clamp(12px, 2vh, 32px);
+  flex-shrink: 0;
+}
+
+.slider-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 6px;
+  background: #c4c4c4;
+  transition: all 0.3s ease;
+}
+
+.slider-dots .dot.active {
+  width: 32px;
+  background: #0cb683;
+}
+
+/* ========== Section 3: Fan-shaped Rotating Cards ========== */
+.section-fan {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: clip;
+  overflow-y: hidden;
+}
+
+.fan-header {
+  text-align: center;
+  padding-top: clamp(60px, 10vh, 80px);
+  flex-shrink: 0;
+}
+
+.fan-title {
+  font-size: clamp(20px, 6.1vw, 24px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+  color: #3d3a35;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fan-desc {
+  font-size: clamp(12px, 3.56vw, 14px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.35px;
+  color: #666;
+  margin-top: 12px;
+}
+
+.fan-stage {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.fan-track {
+  position: relative;
+  width: 248px;
+  height: 320px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fan-card {
+  position: absolute;
+  width: 248px;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  /* R = 322 / (15° in rad) ≈ 1229px. 간격 20% 확대 */
+  transform-origin: 50% calc(50% + 1229px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.fan-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fan-card-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fan-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 94%);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.fan-card-gradient-center {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 39.423%, rgba(0,0,0,0.25) 74.519%, rgba(0,0,0,0.7) 100%);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.fan-card-content {
+  position: absolute;
+  bottom: 18px;
+  left: 19px;
+  right: 24px;
+  z-index: 2;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fan-card-name {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.054px;
+}
+
+.fan-card-desc {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.036px;
+}
+
+/* ========== Section 4: Story (Button Carousel) ========== */
+.section-story {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.story-bg {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.story-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-header {
+  position: relative;
+  z-index: 2;
+  padding: clamp(50px, 8vh, 85px) 10.2% 0;
+  will-change: transform, opacity;
+}
+
+.story-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.35px;
+  color: #fff;
+}
+
+.story-title {
+  font-size: clamp(30px, 9.67vw, 38px);
+  font-weight: 700;
+  line-height: 43px;
+  letter-spacing: -0.95px;
+  color: #fff;
+  margin-top: 5px;
+}
+
+/* Story Carousel */
+.story-carousel-wrap {
+  position: relative;
+  z-index: 2;
+  margin-top: 3vh;
+  /* JS가 padding-left를 계산하여 카드가 가운데 오도록 설정 */
+}
+
+.story-carousel-viewport {
+  overflow: hidden;
+  /* 좌우로 섹션 전체 너비를 커버하여 카드가 왼쪽으로 밀려도 보이게 */
+  margin-left: calc(-1 * var(--story-pad-left, 0px));
+  padding-left: var(--story-pad-left, 0px);
+  width: calc(100% + var(--story-pad-left, 0px));
+}
+
+.story-carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
+}
+
+.story-slide {
+  flex-shrink: 0;
+  /* 카드 너비: 뷰포트 80% (피그마: 314/393≈79.9%) */
+  width: 79.9vw;
+  max-width: 314px;
+}
+
+.story-card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* 화면 높이 대비 카드가 넘치지 않도록 최대 높이 제한 */
+  max-height: calc(100vh - 340px);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.story-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-card-info {
+  margin-top: 10px;
+}
+
+.story-card-person {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #fff;
+}
+
+.story-card-quote {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.35px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2px;
+}
+
+/* Story Nav Buttons - 카드 오른쪽 끝 정렬 (피그마 기준) */
+.story-nav-buttons {
+  display: flex;
+  gap: 19px;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 3;
+  margin-top: clamp(24px, 5vh, 48px);
+  /* JS가 padding-right를 카드 오른쪽 끝에 맞춰 설정 */
+}
+
+.story-nav-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.story-nav-btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.story-nav-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.story-nav-icon.flipped {
+  transform: rotate(180deg);
+}
+
+/* ========== Section 5: CTA (Parallax) ========== */
+.section-cta {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cta-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.cta-bg {
+  position: absolute;
+  width: 210%;
+  height: 225%;
+  left: -52%;
+  top: -20%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(97, 105, 102, 0.42);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 36%;
+  color: #fff;
+  will-change: transform, opacity;
+}
+
+.cta-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: clamp(20px, 6.1vw, 24px);
+  font-weight: 800;
+  line-height: 22px;
+  letter-spacing: -0.6px;
+}
+
+.cta-desc {
+  font-family: 'Pretendard', sans-serif;
+  font-size: clamp(12px, 3.56vw, 14px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.35px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-button {
+  position: absolute;
+  bottom: 31%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 83.2%;
+  max-width: 327px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: clamp(16px, 4.58vw, 18px);
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.45px;
+  color: #46635b;
+  text-decoration: none;
+}
+
+/* ========== Parallax Animations ========== */
+.parallax-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.parallax-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-hero .hero-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+}
+
+.section-hero.in-view .hero-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section 3 fan reveal */
+.section-fan {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-fan.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story-header {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-story.in-view .story-header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story-carousel-wrap {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.section-story.in-view .story-carousel-wrap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-cta.in-view .cta-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-button {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
+
+.section-cta.in-view .cta-button {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

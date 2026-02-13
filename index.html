@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>초록우산 - 아이들을 지키는 사람들</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Pretendard+Variable:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 상단 상태바 -->
+  <header class="status-bar">
+    <span class="status-time">9:41</span>
+    <div class="status-icons">
+      <img src="assets/images/right-side.svg" alt="">
+    </div>
+  </header>
+
+  <!-- 네비게이션 헤더 -->
+  <nav class="nav-header">
+    <img src="assets/images/header.png" alt="초록우산" class="nav-logo">
+  </nav>
+
+  <!-- Section 1: 히어로 (패럴렉스) -->
+  <section class="section-hero" id="section1">
+    <div class="hero-bg-wrapper">
+      <img src="assets/images/main-hero.png" alt="" class="hero-bg parallax-bg" data-speed="0.3">
+    </div>
+    <div class="hero-gradient-top"></div>
+    <div class="hero-gradient-top2"></div>
+    <div class="hero-content parallax-content" data-speed="0.15">
+      <h1 class="hero-title">
+        <span>아이들을 지키는</span>
+        <span>사람들이 있습니다.</span>
+      </h1>
+      <p class="hero-desc">
+        <span>초록우산의 후원자는</span>
+        <span>아동의 권리와 일상을 지키는 수호자이자</span>
+        <span>변화의 동반자입니다.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: 혜택 (스크롤 하이재킹 캐러셀) -->
+  <div class="section-benefit-wrapper" id="section2Wrapper">
+    <section class="section-benefit is-pinned" id="section2">
+      <div class="benefit-header parallax-fade" data-speed="0.2">
+        <span class="benefit-label">BENEFIT</span>
+        <h2 class="benefit-title">나눌수록 커지는 혜택</h2>
+        <p class="benefit-desc">
+          <span>초록우산은 나눔의 여정에 함께해주신 분들께</span>
+          <span>감사의 마음을 담은 혜택을 전합니다.</span>
+        </p>
+      </div>
+      <div class="benefit-slider-area">
+        <div class="benefit-slider" id="benefitSlider">
+          <div class="benefit-card">
+            <img src="assets/images/slide-benefit1.png" alt="" class="card-bg">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h3>나눔가게 상생 혜택</h3>
+              <p>초록우산 나눔가게와 함께하는 착한 소비,<br>멤버십 전용 혜택으로 경험하세요.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <img src="assets/images/slide-benefit2.png" alt="" class="card-bg">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h3>문화생활 특별 혜택</h3>
+              <p>대학로 연극부터 클래식, 뮤지컬·전시까지<br>다양한 문화예술을 전용 혜택으로 만나보세요.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <img src="assets/images/slide-benefit3.png" alt="" class="card-bg">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h3>제휴 브랜드 할인</h3>
+              <p>스케쳐스, 고래사어묵, 바른손카드, 쿤달 등<br>인기 브랜드를 특별 할인가로 이용하세요.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <img src="assets/images/slide-benefit4.png" alt="" class="card-bg">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h3>멤버십 전용 이벤트</h3>
+              <p>시즌별 프로모션과 한정 이벤트에 참여하고,<br>풍성한 혜택과 선물을 받아보세요.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <img src="assets/images/slide-benefit5.png" alt="" class="card-bg">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h3>셀럽 콜라보 굿즈</h3>
+              <p>셀럽과 협업한 한정판 굿즈를 멤버십 회원에게만 제공되는 혜택으로 만나보세요.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-dots" id="benefitDots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+  </div>
+
+  <!-- Section 3: 제휴혜택 (부채꼴 회전 카드) -->
+  <section class="section-fan" id="section3">
+    <div class="fan-header">
+      <h2 class="fan-title">
+        <span>후원자들을 위한,</span>
+        <span>후원자들에 의한 할인 혜택</span>
+      </h2>
+      <p class="fan-desc">초록우산 후원 기업의 수익이 다시 후원이 됩니다.</p>
+    </div>
+    <div class="fan-stage" id="fanStage">
+      <div class="fan-track" id="fanTrack">
+        <!-- 카드 6장: 중앙=0도, 좌우 ±15, ±30 -->
+        <div class="fan-card" data-rotate="-30">
+          <img src="assets/images/slide-s3-card6.png" alt="" class="fan-card-img">
+          <div class="fan-card-gradient"></div>
+          <div class="fan-card-content">
+            <span class="fan-card-name">송도해상케이블카</span>
+            <span class="fan-card-desc">아름다운 바다풍경,<br>현장구매 요금 2000원 할인</span>
+          </div>
+        </div>
+        <div class="fan-card" data-rotate="-15">
+          <img src="assets/images/slide-s3-card2.png" alt="" class="fan-card-img">
+          <div class="fan-card-gradient"></div>
+          <div class="fan-card-content">
+            <span class="fan-card-name">고래사 어묵</span>
+            <span class="fan-card-desc">초록우산 후원자라면 전 품목<br>무제한 추가 할인</span>
+          </div>
+        </div>
+        <div class="fan-card" data-rotate="0">
+          <img src="assets/images/slide-s3-card3.png" alt="" class="fan-card-img">
+          <img src="assets/images/slide-s3-card3-overlay.png" alt="" class="fan-card-overlay">
+          <div class="fan-card-gradient-center"></div>
+          <div class="fan-card-content">
+            <span class="fan-card-name">바른손카드</span>
+            <span class="fan-card-desc">특별한 날을 위한 청첩장 할인 혜택, 최대 16% 쿠폰 제공</span>
+          </div>
+        </div>
+        <div class="fan-card" data-rotate="15">
+          <img src="assets/images/slide-s3-card1.png" alt="" class="fan-card-img">
+          <div class="fan-card-gradient"></div>
+          <div class="fan-card-content">
+            <span class="fan-card-name">씨라이프 부산</span>
+            <span class="fan-card-desc">놀라운 바닷속 탐험, 현장 입장권 30% 할인</span>
+          </div>
+        </div>
+        <div class="fan-card" data-rotate="30">
+          <img src="assets/images/slide-s3-card4.png" alt="" class="fan-card-img">
+          <div class="fan-card-gradient"></div>
+          <div class="fan-card-content">
+            <span class="fan-card-name">점프 JUMP</span>
+            <span class="fan-card-desc">전 세계 관객을 사로잡은<br>논버벌 퍼포먼스 50% 할인 제공</span>
+          </div>
+        </div>
+        <div class="fan-card" data-rotate="45">
+          <img src="assets/images/slide-s3-card5-overlay.png" alt="" class="fan-card-img">
+          <div class="fan-card-gradient"></div>
+          <div class="fan-card-content">
+            <span class="fan-card-name">담양애꽃</span>
+            <span class="fan-card-desc">맛있는 떡갈비 최대 50% 할인</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: 후원자 이야기 (좌우 버튼 캐러셀) -->
+  <section class="section-story" id="section4">
+    <div class="story-bg parallax-bg" data-speed="0.25">
+      <img src="assets/images/section4-bg-new.svg" alt="">
+    </div>
+    <div class="story-header parallax-content" data-speed="0.1">
+      <span class="story-label">아이들의 미래를 만들어가는 사람들의 이야기</span>
+      <h2 class="story-title">후원자 이야기</h2>
+    </div>
+    <div class="story-carousel-wrap">
+      <div class="story-carousel-viewport">
+        <div class="story-carousel-track" id="storyTrack">
+          <div class="story-slide">
+            <div class="story-card">
+              <img src="assets/images/story-card1-bg.png" alt="" class="story-card-img">
+              <img src="assets/images/story-card1-overlay.png" alt="" class="story-card-img-overlay">
+            </div>
+            <div class="story-card-info">
+              <span class="story-card-person">새벽 작가님</span>
+              <span class="story-card-quote">초1때부터 15년간 엄마를 간병한 가족돌봄청년의 새로운 시작</span>
+            </div>
+          </div>
+          <div class="story-slide">
+            <div class="story-card">
+              <img src="assets/images/story-card2.png" alt="" class="story-card-img">
+            </div>
+            <div class="story-card-info">
+              <span class="story-card-person">심윤정 치료사</span>
+              <span class="story-card-quote">우리 모두가 희망하고<br>꿈꾸는 나눔의 선순환!</span>
+            </div>
+          </div>
+          <div class="story-slide">
+            <div class="story-card">
+              <img src="assets/images/story-img1.png" alt="" class="story-card-img">
+            </div>
+            <div class="story-card-info">
+              <span class="story-card-person">김성철 후원자</span>
+              <span class="story-card-quote">아이들 웃음이 제 노년의 가장 큰 선물입니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="story-nav-buttons">
+      <button class="story-nav-btn story-nav-prev disabled" id="storyPrev" aria-label="이전">
+        <img src="assets/images/arrow-circle.svg" alt="" class="story-nav-icon flipped">
+      </button>
+      <button class="story-nav-btn story-nav-next" id="storyNext" aria-label="다음">
+        <img src="assets/images/arrow-circle.svg" alt="" class="story-nav-icon">
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 5: 초록빛 연대 (패럴렉스) -->
+  <section class="section-cta" id="section5">
+    <div class="cta-bg-wrapper">
+      <img src="assets/images/section5-bg.png" alt="" class="cta-bg parallax-bg" data-speed="0.2">
+    </div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content parallax-content" data-speed="0.12">
+      <h2 class="cta-title">초록빛 연대, 세상을 잇다</h2>
+      <p class="cta-desc">
+        <span>아이들을 지키는 마음을 모아</span>
+        <span>다음 세대에게 초록빛 미래를 건네주는 것,</span>
+        <span>이것이 초록우산 라운지가 지향하는 소중한 가치입니다.</span>
+      </p>
+    </div>
+    <a href="#" class="cta-button">후원자 모임 둘러보기</a>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
